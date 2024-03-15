@@ -19,14 +19,18 @@ const questionsRoutes = require("./routes/questionRout");
 // authentication middlewarefil
 const authMiddleware = require("./middleware/authMiddleware");
 
+const answerRoutes = require("./routes/answerRouter")
+
 // json middleware to extract json data
 app.use(express.json());
 
 // user routers middleware
 app.use("/api/users", userRoutes);
 // questions routes middleware ??
-app.use("api/questions", authMiddleware, questionsRoutes);
+app.use("/api/questions", authMiddleware, questionsRoutes);
 // answers routes middleware ??
+app.use("/api/answers", authMiddleware, answerRoutes);
+
 
 async function start() {
   try {

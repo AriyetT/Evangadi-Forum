@@ -8,7 +8,7 @@ const dbConnection = mysql2.createPool({
   connectionLimit: 10,
 });
 
-console.log(process.env.USER)
+// console.log(process.env.USER)
 
 
 

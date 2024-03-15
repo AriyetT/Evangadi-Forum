@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
 
-// authentications middleware
-const authMiddleware = require("../middleware/authMiddleware");
+const {postQuestion, allQuestion} = require("../controller/questionController")
 
-router.get("/all-questions", authMiddleware, (req, res) => {
-  res.send("all questions");
-});
+router.post("/postquestions", postQuestion)
+
+router.get("/all-questions", allQuestion)
 
 module.exports = router;
